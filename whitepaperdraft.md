@@ -1,10 +1,10 @@
-Below is a draft whitepaper based on your vision. Please review and let me know if any adjustments or additions are needed.
 
-DungBeetle: A Decentralized Gamified Fitness Ecosystem on Solana
+
+BoulderRoller: A Decentralized Gamified Fitness Ecosystem on Solana
 
 Abstract
 
-DungBeetle reimagines the fitness-tracking experience by blending the competitive spirit of Strava with a Solana-powered token economy. In our ecosystem, every user is a dung beetle blessed each morning with a recharge of Push—our daily regenerating stamina token—courtesy of the “Khepri Kiss.” Workouts earn Dung tokens, which users stake to form dung piles (or “koms”). Just as a new KOM is crowned on a segment in Strava, the fastest performance on any route earns the title of KoP (King of Pile). The KoP collects rent—modeled after friendly, Monopoly-inspired mechanics—whenever other dung beetles pass by and spend their Push. While the terminology is playful and irreverent, the technical, tokenomic, and economic foundations are designed with academic rigor and a user-favoring philosophy. Higher Logic Studios, based in Philadelphia, proudly presents this innovative approach to fitness, competition, and decentralized engagement.
+BoulderRoller reimagines the fitness-tracking experience by blending the competitive spirit of Strava with a Solana-powered token economy. In our ecosystem, every user is a dung beetle blessed each morning with a recharge of Push—our daily regenerating stamina token—courtesy of the “Khepri Kiss.” Workouts earn Dung tokens, which users stake to form dung piles (or “koms”). Just as a new KOM is crowned on a segment in Strava, the fastest performance on any route earns the title of KoP (King of Pile). The KoP collects rent—modeled after friendly, Monopoly-inspired mechanics—whenever other dung beetles pass by and spend their Push. While the terminology is playful and irreverent, the technical, tokenomic, and economic foundations are designed with academic rigor and a user-favoring philosophy. Higher Logic Studios, based in Philadelphia, proudly presents this innovative approach to fitness, competition, and decentralized engagement.
 
 1. Introduction
 
@@ -19,11 +19,11 @@ Despite the popularity of fitness apps, several challenges remain:
 
 DungBeetle addresses these issues by introducing decentralized, user-friendly mechanisms that both verify and reward genuine athletic performance.
 
-3. The DungBeetle Solution
+3. The BoulderRoller Solution
 
 3.1 Ecosystem Overview
 
-At the heart of DungBeetle are two tokens:
+At the heart of Boulderroller are two tokens:
 	•	Push:
 	•	Function: A daily regenerating resource (recharged each morning via the “Khepri Kiss”) that represents stamina.
 	•	Usage: Spent to log workouts and engage in challenges.
