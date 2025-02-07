@@ -82,4 +82,4 @@ License:
   - This project is licensed under the MIT License.
 
 Contact:
-  - For further information, please contact the development team at your-email@example.com.
+  - For further information, please contact the development team at dungbeetlephoenix@proton.me
