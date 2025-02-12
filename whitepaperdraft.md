@@ -4,157 +4,107 @@
 - [Abstract](#abstract)
 - [1. Introduction](#1-introduction)
 - [2. Problem Statement](#2-problem-statement)
-- [3. The BoulderRoller Solution](#3-the-boulderroller-solution)
-- [4. Technical Architecture](#4-technical-architecture)
-- [5. Roadmap & Timeline](#5-roadmap--timeline)
-- [6. Platform & Data Architecture](#6-platform--data-architecture)
-- [7. Team & Origin](#7-team--origin)
-- [8. Conclusion & Future Outlook](#8-conclusion--future-outlook)
+- [3. Token System](#3-token-system)
+- [4. Protocol Mechanics](#4-protocol-mechanics)
+- [5. Technical Architecture](#5-technical-architecture)
+- [6. Growth Model](#6-growth-model)
+- [7. Conclusion](#7-conclusion)
 
 ## Abstract
 
-BoulderRoller reimagines the fitness-tracking experience by blending the competitive spirit of Strava with a Solana-powered token economy. In our ecosystem, every user is a dung beetle blessed each morning with a recharge of Push—our daily regenerating stamina token—courtesy of the "Khepri Kiss." Workouts earn Dung tokens, which users stake to form dung piles (or "koms"). Just as a new KOM is crowned on a segment in Strava, the fastest performance on any route earns the title of KoP (King of Pile). The KoP collects rent—modeled after friendly, Monopoly-inspired mechanics—whenever other dung beetles pass by and spend their Push.
-
-While the terminology is playful and irreverent, the technical, tokenomic, and economic foundations are designed with academic rigor and a user-favoring philosophy. Higher Logic Studios, based in Philadelphia, proudly presents this innovative approach to fitness, competition, and decentralized engagement.
+BoulderRoller reimagines fitness tracking by blending Strava-like competition with a zero-start token economy. The platform mints DUNG tokens solely through verified Total Segment Score (TSS) achievements, while using kCAL as a daily-refreshing utility token for segment access. This dual-token system creates a transparent and efficient reward mechanism that scales naturally with user participation.
 
 ## 1. Introduction
 
-Modern fitness applications have long provided motivation and community, but often fall short of delivering sustained, competitive excitement that rewards consistent performance. DungBeetle offers a fresh twist by integrating a blockchain-powered token economy with familiar workout-tracking features. By leveraging Solana's robust infrastructure, we combine fast, secure transactions with an engaging competitive layer—where every workout is not only a step toward personal health but also a strategic move in a gamified economy.
+Modern fitness applications excel at tracking but fall short in sustainable rewards and engagement. BoulderRoller addresses this through a carefully designed token economy built on Solana, where every workout contributes to both personal achievement and economic participation. Our zero-start approach ensures all tokens are backed by real physical activity.
 
 ## 2. Problem Statement
 
-Despite the popularity of fitness apps, several challenges remain:
+Current fitness platforms face several challenges:
 
-* **Motivational Plateau**: Traditional platforms can lead to diminishing excitement over time, with little differentiation in user rewards
+* **Fair Launch**: Traditional token systems often start with pre-mines or unfair distributions
+* **Value Backing**: Tokens rarely represent real physical achievement
+* **Sustainable Economics**: Most systems lack natural growth limitations
+* **Engagement Incentives**: Limited rewards for consistent participation
 
-* **Data Authenticity**: Ensuring genuine workout data is a constant challenge, particularly in competitive settings
+## 3. Token System
 
-* **Centralization**: Many systems control incentives centrally, limiting the direct reward users receive for their efforts
+### 3.1 Dual Token Structure
 
-DungBeetle addresses these issues by introducing decentralized, user-friendly mechanisms that both verify and reward genuine athletic performance.
+#### DUNG Token
+* **Generation**: Minted solely through TSS achievements (10 DUNG per TSS)
+* **Utility**: Staking, governance, and KoM challenges
+* **Supply**: Zero initial supply, grows with network activity
 
-## 3. The BoulderRoller Solution
+#### kCAL Token
+* **Distribution**: 2,000 daily allocation per user
+* **Usage**: Required for segment access
+* **Mechanics**: Burned through segment taxes
+* **Reset**: Daily refresh at UTC 0:00
 
-### 3.1 Ecosystem Overview
+### 3.2 Economic Mechanics
 
-At the heart of Boulderroller are two tokens:
+* **Segment Tax**: distance * (segment_tvl/total_tvl)
+* **Tax Collection**: Paid exclusively in kCAL
+* **Burn Rate**: 80% of collected kCAL burned
+* **Treasury**: 20% of collected kCAL to protocol
 
-#### Push
-* **Function**: A daily regenerating resource (recharged each morning via the "Khepri Kiss") that represents stamina
-* **Usage**: Spent to log workouts and engage in challenges
+## 4. Protocol Mechanics
 
-#### Dung
-* **Function**: Earned from authentic exercise, these tokens are the "currency" for staking
-* **Usage**: Users stake Dung to form dung piles (koms) and vie for the coveted KoP title
+### 4.1 Activity Verification
+* GPS validation for workout data
+* TSS calculation and verification
+* Segment completion tracking
 
-### 3.2 Gamified Mechanics & Competitive Edge
+### 4.2 Token Generation
+* Initial activity: 1,000 DUNG (100 TSS example)
+* Continuous minting: 10 DUNG per verified TSS
+* Natural limitations through human capacity
 
-#### Dung Piles (Koms) & KoP Crowning
-* Inspired by Strava's segment challenges, dung piles represent virtual zones where users compete for the fastest time
-* The fastest performance on a segment crowns the user as the KoP
-* Other users on a ride can challenge the existing KoP by attacking the segment with speed
+### 4.3 Value Capture
+* Segment taxes create natural kCAL demand
+* TVL-weighted tax system
+* Automated burn mechanism
 
-#### Rent Mechanism
-Echoing the friendly economics of Monopoly, the KoP collects "rent" when others expend Push tokens in the vicinity. This system is designed to be exciting without being punitive—ensuring no one goes "broke" simply by participating.
+## 5. Technical Architecture
 
-#### Proof-of-Workout (PoW)
-For our MVP, we will rely on GPS data to verify workout activity, employing rudimentary validation methods. This initial approach will allow us to test on a testnet environment—keeping token integrations safe until we are ready for mainnet deployment.
+### 5.1 Smart Contracts
+* Token logic for DUNG and kCAL
+* TSS verification system
+* Segment tax calculation and collection
+* Automated burn mechanism
 
-### 3.3 Tokenomics Philosophy
+### 5.2 Security Features
+* GPS data validation
+* Anti-gaming mechanisms
+* Automated tax processing
 
-Our tokenomics are deliberately structured to remain fun, competitive, and, most importantly, user favoring:
+## 6. Growth Model
 
-#### Push (Stamina)
-* Recharged every morning by the "Khepri Kiss" (a nod to ancient symbolism and the dung beetle's mythos)
-* Used in a manner that encourages daily engagement without over-penalizing users
+### First Month
+* Target Users: 50
+* Daily Activities: 30
+* Average TSS: 80
+* Expected Supply: ~1.2M DUNG
+* Staking Ratio: 60%
 
-#### Dung Tokens
-* Earned through genuine exercise performance
-* Used to stake in dung piles, with competitive dynamics that reward both speed and strategy
+### Quarter One
+* Target Users: 500
+* Daily Activities: 300
+* Average TSS: 85
+* Expected Supply: ~12.75M DUNG
+* Staking Ratio: 70%
 
-The design intentionally avoids exploitative yield-farming mechanics, ensuring that the system remains balanced and enjoyable for all participants.
+### Six Months
+* Target Users: 2,500
+* Daily Activities: 1,500
+* Expected Supply: ~63.75M DUNG
+* Staking Ratio: 75%
 
-## 4. Technical Architecture
+## 7. Conclusion
 
-### 4.1 Front-End & User Experience
-
-#### Mobile-First Application
-* The primary interface will be a mobile app that mirrors familiar fitness tracking (inspired by Strava) with additional gamified elements such as leaderboards, segment challenges, and interactive maps
-
-#### Web Dashboard
-* A complementary web portal will provide users with detailed analytics, portfolio management of their tokens, and broader community insights
-
-#### User Data Management
-* To maintain control over the ecosystem and ensure privacy, user data will be warehoused in secure enclaves—similar to practices adopted by StepN
-* While we control these enclaves for enhanced security and efficiency, users will always retain the ability to recover their assets through recovery phrases
-
-### 4.2 Back-End & Blockchain Integration
-
-#### Solana Smart Contracts
-* **Token Contracts**: For minting and managing Push and Dung tokens
-* **Staking & Rent Contracts**: To handle dung pile staking, KoP challenges, and rent distribution
-
-#### Workout Verification
-* **MVP Approach**: Utilize GPS data to verify workouts, ensuring a balance between speed of deployment and data integrity
-* **Future Enhancements**: Potential integrations of additional sensor data (such as HRV or power metrics) once the MVP is validated
-
-#### Security & Scalability
-While the MVP will operate in a testnet environment, our architectural plans include robust smart contract audits and scalable infrastructure to support a full mainnet deployment.
-
-## 5. Roadmap & Timeline
-
-DungBeetle is designed to evolve through clearly defined phases:
-
-### Phase 1 – MVP (ASAP Target)
-
-#### Development Focus
-* Mobile app with basic workout logging and GPS-based PoW verification
-* Web dashboard for token portfolio management
-* Initial smart contracts for Push and Dung token issuance and basic staking mechanisms
-
-#### Testing Environment
-* Launch on a testnet to validate core functionalities and ensure safe token integration
-
-### Phase 2 – Enhanced Features & User Engagement
-
-#### Data Verification Upgrades
-* Expand PoW to include rudimentary integrations with additional sensor data
-
-#### Advanced Gamification
-* Refine dung pile (kom) mechanics and KoP challenge dynamics
-* Introduce dynamic rent collection inspired by competitive game models
-
-#### Community Features
-* Roll out leaderboards, segment analytics, and social sharing features
-
-### Phase 3 – Scaling & Optimization
-
-#### Mainnet Launch
-* Transition to mainnet with full token integration once robust testing and audits are complete
-
-#### Ecosystem Expansion
-* Further enhance data verification protocols, possibly partnering with wearable tech providers
-* Optimize the user interface and experience based on community feedback
-
-#### Long-Term Development
-* Regular updates to gamification elements, economic incentives, and user engagement strategies
-
-## 6. Platform & Data Architecture
-
-* **Mobile-First, with Web Support**: Prioritizing a seamless mobile experience while providing a comprehensive web dashboard for deeper insights
-
-* **Secure Data Enclaves**: User private data will be stored securely in controlled enclaves, ensuring that while the ecosystem remains under our control for efficiency and safety, users retain ultimate sovereignty over their assets through recovery phrases
-
-## 7. Team & Origin
-
-DungBeetle is developed by Higher Logic Studios, based in Philadelphia. Our team combines expertise in blockchain development, mobile application design, and data security to create a platform that is both innovative and user centric. We are committed to crafting an ecosystem that is academically rigorous in its technical design while self-aware enough to embrace a playful, irreverent spirit.
-
-## 8. Conclusion & Future Outlook
-
-DungBeetle stands at the intersection of fitness, gamification, and decentralized finance—a convergence that promises to reward genuine athletic effort while building a competitive, user-favoring token economy. By reimagining the Strava experience with a blockchain twist, we not only celebrate the spirit of competition but also empower our users with true ownership of their achievements. As we move from MVP to full-scale deployment, our commitment remains clear: to craft an ecosystem that is as fun as it is innovative, and as rigorous as it is engaging.
-
-We invite early adopters, developers, and fitness enthusiasts to join us on this journey as we pioneer a new frontier in decentralized fitness.
+BoulderRoller's zero-start, TSS-based token system creates a truly fair and sustainable fitness economy. By backing every token with verified physical activity and implementing natural supply growth limitations, we establish a platform where value directly correlates with network participation and achievement.
 
 ---
 
-For further inquiries or feedback, please contact Higher Logic Studios.
+For technical details or inquiries, please contact Higher Logic Studios.
