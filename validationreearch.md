@@ -1,7 +1,7 @@
 # Robust TSS Validation Through Biometric Fingerprinting  
 *A Multi-Layered, Mathematically-Driven Approach for Token–Minting Integrity*  
 
-**Authors:** BoulderRoller Research Team  
+**Authors:** dungbeetlephoenix  
 **Date:** 2025-02-12
 
 ---
